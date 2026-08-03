@@ -15,7 +15,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 
 // Anti-abuso: só aceita envios originados do próprio site
 $origem = $_SERVER['HTTP_ORIGIN'] ?? ($_SERVER['HTTP_REFERER'] ?? '');
-if ($origem !== '' && stripos($origem, 'iafirst.3ads.com.br') === false) {
+if ($origem !== '' && stripos($origem, 'teste.3adsux.com.br') === false) {
     fail(403, 'Origem não autorizada');
 }
 
@@ -62,7 +62,7 @@ if (is_file($lock) && (time() - filemtime($lock)) < 15) {
 @touch($lock);
 
 $destino   = 'carloscosta.inf@gmail.com';
-$remetente = 'noreply@iafirst.3ads.com.br';
+$remetente = 'noreply@teste.3adsux.com.br';
 $assunto   = 'Nova aplicação — Mentoria AI FIRST';
 
 $corpo  = "Nova aplicação recebida pela landing page AI FIRST\n";

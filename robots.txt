@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iafirst.3ads.com.br/sitemap.xml
+Sitemap: https://teste.3adsux.com.br/sitemap.xml
