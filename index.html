@@ -23,12 +23,12 @@
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#007CFF"></stop>
-        <stop offset="100%" stop-color="#000AFF"></stop>
+        <stop offset="0%" stop-color="#78C7FF"></stop>
+        <stop offset="100%" stop-color="#2A5FE0"></stop>
       </linearGradient>
       <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#007CFF" stop-opacity="0.8"></stop>
-        <stop offset="100%" stop-color="#007CFF" stop-opacity="0"></stop>
+        <stop offset="0%" stop-color="#78C7FF" stop-opacity="0.8"></stop>
+        <stop offset="100%" stop-color="#78C7FF" stop-opacity="0"></stop>
       </linearGradient>
     </defs>
     <!-- background -->
@@ -78,6 +78,18 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const manifest = JSON.parse(manifestEl.textContent);
     let template = JSON.parse(templateEl.textContent);
+    const themeReplacements = [
+      ['#007CFF', '#78C7FF'],
+      ['#000AFF', '#2A5FE0'],
+      ['#7BBDF3', '#8FD7FF'],
+      ['0,124,255', '120,199,255'],
+      ['0,10,255', '42,95,224'],
+      ['#93c5fd', '#B7E2FF'],
+      ['#003FA6,var(--blue),#5B9EF0', '#1749B8,#4B8FE8,#7BC9FF']
+    ];
+    for (const [from, to] of themeReplacements) {
+      template = template.split(from).join(to);
+    }
 
     const uuids = Object.keys(manifest);
     setStatus('Unpacking ' + uuids.length + ' assets...');
