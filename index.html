@@ -5,9 +5,9 @@
   <title>Mentoria AI FIRST para Executivos · 3ADS</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #030305; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #030305; z-index: 9999; }
+    body { background: #f6d54a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #6d4a00; background: rgba(255,248,225,0.94); padding: 8px 14px; border-radius: 8px; box-shadow: 0 10px 30px rgba(120,76,0,0.16); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f6d54a; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
@@ -23,16 +23,16 @@
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#007CFF"></stop>
-        <stop offset="100%" stop-color="#000AFF"></stop>
+        <stop offset="0%" stop-color="#f4b000"></stop>
+        <stop offset="100%" stop-color="#b97700"></stop>
       </linearGradient>
       <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#007CFF" stop-opacity="0.8"></stop>
-        <stop offset="100%" stop-color="#007CFF" stop-opacity="0"></stop>
+        <stop offset="0%" stop-color="#b97700" stop-opacity="0.35"></stop>
+        <stop offset="100%" stop-color="#b97700" stop-opacity="0"></stop>
       </linearGradient>
     </defs>
     <!-- background -->
-    <rect width="1200" height="800" fill="#030305"></rect>
+    <rect width="1200" height="800" fill="#f6d54a"></rect>
     <!-- vertical beams -->
     <rect x="200" y="0" width="1" height="800" fill="url(#g2)" opacity="0.7"></rect>
     <rect x="450" y="0" width="1" height="800" fill="url(#g2)" opacity="0.5"></rect>
@@ -41,11 +41,11 @@
     <!-- mark glyph -->
     <g transform="translate(600 400)">
       <rect x="-80" y="-80" width="160" height="160" rx="36" fill="url(#g1)"></rect>
-      <rect x="-26" y="-26" width="52" height="52" rx="10" fill="#fff"></rect>
+      <rect x="-26" y="-26" width="52" height="52" rx="10" fill="#2c1a00"></rect>
     </g>
     <!-- wordmark -->
-    <text x="600" y="560" font-family="Geist, Inter, system-ui, sans-serif" font-size="42" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="2">3ADS / APEX</text>
-    <text x="600" y="600" font-family="Geist Mono, monospace" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="3">MENTORIA EXECUTIVA · IA</text>
+    <text x="600" y="560" font-family="Geist, Inter, system-ui, sans-serif" font-size="42" font-weight="600" fill="#2c1a00" text-anchor="middle" letter-spacing="2">3ADS / APEX</text>
+    <text x="600" y="600" font-family="Geist Mono, monospace" font-size="14" fill="rgba(44,26,0,0.55)" text-anchor="middle" letter-spacing="3">MENTORIA EXECUTIVA · IA</text>
   </svg>
 </div>
   <div id="__bundler_loading">Unpacking...</div>
@@ -55,6 +55,86 @@
 document.addEventListener('DOMContentLoaded', async function() {
   const loading = document.getElementById('__bundler_loading');
   function setStatus(msg) { if (loading) loading.textContent = msg; }
+  function applyYellowTheme(template) {
+    const rootTheme = `:root{
+  --blue:#F4B000;
+  --deep:#B97700;
+  --bg:#F6D54A;
+  --s1:rgba(255,248,225,0.24);
+  --s2:rgba(255,248,225,0.38);
+  --s3:rgba(120,76,0,0.14);
+  --b1:rgba(120,76,0,0.10);
+  --b2:rgba(120,76,0,0.16);
+  --b3:rgba(120,76,0,0.24);
+  --t1:#2C1A00;
+  --t2:rgba(44,26,0,0.72);
+  --t3:rgba(44,26,0,0.52);
+  --t4:rgba(44,26,0,0.22);
+  --nav-bg:rgba(246,213,74,.78);
+  --grid-line:rgba(120,76,0,0.10);
+  --orbit-fill:rgba(255,240,170,.92);
+  --glass-bg:rgba(255,249,220,.60);
+  --glass-border:rgba(120,76,0,.12);
+  --glow1:rgba(244,176,0,.24);
+  --glow2:rgba(185,119,0,.18);
+  --glow3:rgba(255,221,95,.22);
+  --beam-c:rgba(185,119,0,.42);
+  --beam-c2:rgba(120,76,0,.72);
+  --selection-c:rgba(244,176,0,0.26);
+  --scrollbar-c:rgba(120,76,0,0.22);
+  --success:#2E8B57;
+}`;
+    const lightTheme = `[data-theme="light"]{
+  --blue:#F4B000;
+  --deep:#B97700;
+  --bg:#FFF0A8;
+  --s1:rgba(255,255,255,0.38);
+  --s2:rgba(255,255,255,0.52);
+  --s3:rgba(120,76,0,0.10);
+  --b1:rgba(120,76,0,0.08);
+  --b2:rgba(120,76,0,0.14);
+  --b3:rgba(120,76,0,0.22);
+  --t1:#2C1A00;
+  --t2:rgba(44,26,0,0.70);
+  --t3:rgba(44,26,0,0.50);
+  --t4:rgba(44,26,0,0.22);
+  --nav-bg:rgba(255,240,168,.88);
+  --grid-line:rgba(120,76,0,0.10);
+  --orbit-fill:rgba(255,247,206,.96);
+  --glass-bg:rgba(255,252,234,.74);
+  --glass-border:rgba(120,76,0,.10);
+  --glow1:rgba(244,176,0,.18);
+  --glow2:rgba(185,119,0,.12);
+  --glow3:rgba(255,221,95,.16);
+  --beam-c:rgba(185,119,0,.35);
+  --beam-c2:rgba(120,76,0,.55);
+  --selection-c:rgba(244,176,0,0.20);
+  --scrollbar-c:rgba(120,76,0,0.20);
+}`;
+    const themeFixes = `<style id="yellow-theme-fixes">
+  .logo-edu-foot [fill="white"]{fill:#2C1A00}
+</style>`;
+    const replacements = [
+      ['#007CFF', '#F4B000'],
+      ['#000AFF', '#B97700'],
+      ['#7BBDF3', '#F7CC53'],
+      ['0,124,255', '244,176,0'],
+      ['0,10,255', '185,119,0'],
+      ['stroke="rgba(255,255,255,.5)"', 'stroke="rgba(44,26,0,.55)"']
+    ];
+
+    template = template.replace(/:root\{[\s\S]*?\n\}/, rootTheme);
+    template = template.replace(/\[data-theme="light"\]\{[\s\S]*?\n\}/, lightTheme);
+    replacements.forEach(function(pair) {
+      template = template.split(pair[0]).join(pair[1]);
+    });
+
+    if (template.indexOf('yellow-theme-fixes') === -1) {
+      template = template.replace('</head>', themeFixes + '</head>');
+    }
+
+    return template;
+  }
 
   // Error sink persists across replaceWith since it's on window, not the DOM.
   window.addEventListener('error', function(e) {
@@ -78,6 +158,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const manifest = JSON.parse(manifestEl.textContent);
     let template = JSON.parse(templateEl.textContent);
+    template = applyYellowTheme(template);
 
     const uuids = Object.keys(manifest);
     setStatus('Unpacking ' + uuids.length + ' assets...');
