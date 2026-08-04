@@ -5,9 +5,9 @@
   <title>Mentoria AI FIRST para Executivos · 3ADS</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #030305; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #f8cf39; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
     #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #030305; z-index: 9999; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f8cf39; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
@@ -23,16 +23,16 @@
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#007CFF"></stop>
-        <stop offset="100%" stop-color="#000AFF"></stop>
+        <stop offset="0%" stop-color="#F5C400"></stop>
+        <stop offset="100%" stop-color="#C57F00"></stop>
       </linearGradient>
       <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#007CFF" stop-opacity="0.8"></stop>
-        <stop offset="100%" stop-color="#007CFF" stop-opacity="0"></stop>
+        <stop offset="0%" stop-color="#C57F00" stop-opacity="0.8"></stop>
+        <stop offset="100%" stop-color="#C57F00" stop-opacity="0"></stop>
       </linearGradient>
     </defs>
     <!-- background -->
-    <rect width="1200" height="800" fill="#030305"></rect>
+    <rect width="1200" height="800" fill="#f8cf39"></rect>
     <!-- vertical beams -->
     <rect x="200" y="0" width="1" height="800" fill="url(#g2)" opacity="0.7"></rect>
     <rect x="450" y="0" width="1" height="800" fill="url(#g2)" opacity="0.5"></rect>
@@ -44,8 +44,8 @@
       <rect x="-26" y="-26" width="52" height="52" rx="10" fill="#fff"></rect>
     </g>
     <!-- wordmark -->
-    <text x="600" y="560" font-family="Geist, Inter, system-ui, sans-serif" font-size="42" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="2">3ADS / APEX</text>
-    <text x="600" y="600" font-family="Geist Mono, monospace" font-size="14" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="3">MENTORIA EXECUTIVA · IA</text>
+    <text x="600" y="560" font-family="Geist, Inter, system-ui, sans-serif" font-size="42" font-weight="600" fill="#2E2100" text-anchor="middle" letter-spacing="2">3ADS / APEX</text>
+    <text x="600" y="600" font-family="Geist Mono, monospace" font-size="14" fill="rgba(46,33,0,0.62)" text-anchor="middle" letter-spacing="3">MENTORIA EXECUTIVA · IA</text>
   </svg>
 </div>
   <div id="__bundler_loading">Unpacking...</div>
@@ -244,6 +244,103 @@ document.addEventListener('DOMContentLoaded', async function() {
       const timer = window.setInterval(function() {
         attempts += 1;
         if (applyMentorFix() || attempts > 120) {
+          window.clearInterval(timer);
+        }
+      }, 250);
+    })();
+  </script>
+  <script>
+    (function() {
+      const styleId = "__yellow-theme-override";
+
+      function ensureStyle() {
+        if (document.getElementById(styleId)) return;
+
+        const style = document.createElement("style");
+        style.id = styleId;
+        style.textContent = [
+          ":root {",
+          "  --blue: #c57f00;",
+          "  --deep: #8d4f00;",
+          "  --bg: #f8cf39;",
+          "  --s1: rgba(255,255,255,0.18);",
+          "  --s2: rgba(255,255,255,0.28);",
+          "  --s3: rgba(255,255,255,0.42);",
+          "  --b1: rgba(96,61,0,0.10);",
+          "  --b2: rgba(96,61,0,0.16);",
+          "  --b3: rgba(96,61,0,0.24);",
+          "  --t1: #2e2100;",
+          "  --t2: rgba(46,33,0,0.72);",
+          "  --t3: rgba(46,33,0,0.48);",
+          "  --t4: rgba(46,33,0,0.22);",
+          "  --nav-bg: rgba(252,223,91,0.84);",
+          "  --grid-line: rgba(126,82,0,0.10);",
+          "  --orbit-fill: rgba(255,245,187,0.96);",
+          "  --glass-bg: rgba(255,248,210,0.58);",
+          "  --glass-border: rgba(109,71,0,0.16);",
+          "  --glow1: rgba(255,222,77,0.44);",
+          "  --glow2: rgba(219,147,0,0.28);",
+          "  --glow3: rgba(255,187,0,0.20);",
+          "  --beam-c: rgba(171,104,0,0.72);",
+          "  --beam-c2: rgba(242,176,0,0.98);",
+          "  --selection-c: rgba(214,140,0,0.24);",
+          "  --scrollbar-c: rgba(96,61,0,0.22);",
+          "}",
+          "html, body {",
+          "  background: radial-gradient(circle at top left, #ffe680 0%, #f8cf39 38%, #eab308 100%) !important;",
+          "  color: var(--t1) !important;",
+          "}",
+          "nav { box-shadow: 0 16px 40px rgba(137, 91, 0, 0.08); }",
+          ".bg-grid, .bg-grid-inner { opacity: 0.92; }",
+          ".glow-orb { filter: blur(140px) saturate(1.15); }",
+          "[class*=\"card\"], .faq-item, .ap-item, .pill, .tag, .badge, .proof-item, .mentor-card {",
+          "  box-shadow: 0 18px 45px rgba(137, 91, 0, 0.08);",
+          "}",
+          ".gradient-text {",
+          "  background-image: linear-gradient(135deg, #8d4f00 0%, #c57f00 42%, #fff4c4 100%) !important;",
+          "}",
+          ".btn-solid, .btn-orbit .ofill, .wa-float {",
+          "  background: linear-gradient(135deg, #d08a00 0%, #f5c400 100%) !important;",
+          "  color: #2e2100 !important;",
+          "  box-shadow: 0 18px 40px rgba(157, 104, 0, 0.22) !important;",
+          "  border-color: rgba(96, 61, 0, 0.18) !important;",
+          "}",
+          ".btn-orbit .conic {",
+          "  background: conic-gradient(from 180deg, #fff1b8, #f5c400, #d08a00, #fff1b8) !important;",
+          "}",
+          ".btn-solid svg, .btn-orbit .ocontent svg { stroke: currentColor !important; }",
+          ".wa-float svg path { fill: currentColor !important; }",
+          "svg[aria-label=\"3ADS EDU\"] [fill=\"white\"],",
+          "svg[aria-label=\"Mentoria AI FIRST para Executivos\"] text,",
+          "svg[aria-label=\"Mentoria AI FIRST para Executivos\"] [fill=\"currentColor\"] {",
+          "  fill: #2e2100 !important;",
+          "}",
+          "svg[aria-label=\"3ADS EDU\"] [fill=\"#7BBDF3\"],",
+          "svg[aria-label=\"Mentoria AI FIRST para Executivos\"] [fill=\"#007CFF\"] {",
+          "  fill: #c57f00 !important;",
+          "}",
+          "svg stop[stop-color=\"#007CFF\"],",
+          "svg stop[stop-color=\"#000AFF\"] {",
+          "  stop-color: #c57f00 !important;",
+          "}",
+          ".logo-nav-svg, .logo-foot-svg { color: #2e2100 !important; }"
+        ].join("\n");
+
+        (document.head || document.documentElement).appendChild(style);
+      }
+
+      function applyYellowTheme() {
+        if (!document.body) return false;
+        ensureStyle();
+        return true;
+      }
+
+      if (applyYellowTheme()) return;
+
+      let attempts = 0;
+      const timer = window.setInterval(function() {
+        attempts += 1;
+        if (applyYellowTheme() || attempts > 120) {
           window.clearInterval(timer);
         }
       }, 250);
