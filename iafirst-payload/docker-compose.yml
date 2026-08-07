@@ -1,0 +1,17 @@
+services:
+  payload:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: file:/app/data/iafirst-payload.db
+    volumes:
+      - payload_data:/app/data
+      - payload_media:/app/public/media
+
+volumes:
+  payload_data:
+  payload_media:
