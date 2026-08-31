@@ -143,7 +143,7 @@ export const defaultLandingPage: LandingPageData = {
   },
   outcomes: {
     eyebrow: '02 · O que você constrói',
-    headline: 'Você não aprende sobre IA. Você sai com a sua.',
+    headline: 'Você não apredente sobre IA de forma genérica. Você sai com a sua.',
     description:
       'Em 4 meses você constrói, lado a lado com o mentor, uma arquitetura executiva de IA pronta para uso: agente próprio, stack pessoal e fluxos operacionais aplicados à sua rotina.',
     items: [
